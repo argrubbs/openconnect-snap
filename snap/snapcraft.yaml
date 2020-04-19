@@ -19,17 +19,17 @@ parts:
       - build-essential
     source: https://github.com/cernekee/stoken/archive/v0.92.tar.gz
     plugin: make
+    stage-packages:
+      - libtomcrypt1
     override-pull: |
       snapcraftctl pull
       ./autogen.sh
       ./configure
-    override-build: |
-      make
-      make check
-      make install
   openconnect:
     build-packages:
       - build-essential
+      - libp11-kit-dev
+      - libp11-dev
       - autotools-dev
       - automake
       - libtool
@@ -43,6 +43,8 @@ parts:
     # See 'snapcraft plugins'
     plugin: make
     stage-packages:
+      - p11-kit
+      - libp11-3
       - libxml2
       - libicu60
       - vpnc-scripts
