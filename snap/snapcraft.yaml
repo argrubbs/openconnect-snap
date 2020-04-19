@@ -9,6 +9,24 @@ grade: stable # must be 'stable' to release into candidate/stable channels
 confinement: devmode # use 'strict' once you have the right plugs and slots
 
 parts:
+  stoken:
+    build-packages:
+      - libtomcrypt-dev
+      - libxml2-dev
+      - autoconf
+      - automake
+      - libtool
+      - build-essential
+    source: https://github.com/cernekee/stoken/archive/v0.92.tar.gz
+    plugin: make
+    override-pull: |
+      snapcraftctl pull
+      ./autogen.sh
+      ./configure
+    override-build: |
+      make
+      make check
+      make install
   openconnect:
     build-packages:
       - build-essential
