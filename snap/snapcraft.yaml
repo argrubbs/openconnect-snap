@@ -40,10 +40,14 @@ parts:
       - libssl-dev
       - pkg-config
       - libproxy-dev
+      - liboath-dev
+      - libpcsclite-dev
     source: ftp://ftp.infradead.org/pub/openconnect/openconnect-8.08.tar.gz
     # See 'snapcraft plugins'
     plugin: make
     stage-packages:
+      - libpcsclite1
+      - liboath0
       - libproxy-tools
       - p11-kit
       - libp11-3
