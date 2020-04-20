@@ -39,10 +39,12 @@ parts:
       - zlib1g-dev
       - libssl-dev
       - pkg-config
+      - libproxy-dev
     source: ftp://ftp.infradead.org/pub/openconnect/openconnect-8.08.tar.gz
     # See 'snapcraft plugins'
     plugin: make
     stage-packages:
+      - libproxy-tools
       - p11-kit
       - libp11-3
       - libxml2
@@ -55,7 +57,7 @@ parts:
 
 apps:
   openconnect:
-    command: usr/local/sbin/openconnect --script /snap/openconnect/current/usr/share/vpnc-scripts/vpnc-script
+    command: usr/local/sbin/openconnect --script /snap/$SNAP_NAME/current/usr/share/vpnc-scripts/vpnc-script
     adapter: full
     plugs:
       - network
