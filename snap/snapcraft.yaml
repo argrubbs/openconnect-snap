@@ -1,6 +1,6 @@
 name: openconnect-vpn # you probably want to 'snapcraft register <name>'
 base: core18 # the base snap is the execution environment for this snap
-version: '8.08' # just for humans, typically '1.2+git' or '1.3.2'
+version: '8.10' # just for humans, typically '1.2+git' or '1.3.2'
 summary: OpenConnect VPN Client # 79 char long summary
 description: |
   OpenConnect is an SSL VPN client initially created to support Cisco's AnyConnect SSL VPN. It has since been ported to support the Juniper SSL VPN (which is now known as Pulse Connect Secure), and the Palo Alto Networks GlobalProtect SSL VPN.
